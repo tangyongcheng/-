@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+            #div{
+            	width: 300px;
+            	height: 48px;
+            	background: darkgray;
+            	overflow: hidden;
+            }
+            #div ul li{
+            	height: 24px;
+            }
+            #div1{
+            	width: 300px;
+            	height: 92px;
+            	background: darkgray;
+            	position: absolute;
+            	left: 320px;
+            	top: 0;
+            	overflow: hidden;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<ul id="con1">
+				<li>1滚动信息特效overflow是必须取得</li>
+				<li>2滚动信息特效overflow是必须取得</li>
+				<li>3滚动信息特效overflow是必须取得</li>
+				<li>4滚动信息特效overflow是必须取得</li>
+				<li>5滚动信息特效overflow是必须取得</li>
+				<li>6滚动信息特效overflow是必须取得</li>
+			</ul>
+			<ul id="con2">
+				
+			</ul>
+		</div>
+		<div id="div1">
+			<ul id="con3">
+				<li>1滚动信息特效overflow是必须取得</li>
+				<li>2滚动信息特效overflow是必须取得</li>
+				<li>3滚动信息特效overflow是必须取得</li>
+				<li>4滚动信息特效overflow是必须取得</li>
+				<li>5滚动信息特效overflow是必须取得</li>
+				<li>6滚动信息特效overflow是必须取得</li>
+			</ul>
+		</div>
+			<script type="text/javascript">
+				var div=document.getElementById("div");
+				var con1=document.getElementById("con1");
+				var con2=document.getElementById("con2");
+			    div.scrollTop=0//返回的就是该元素在可见区域之上被隐藏部分的高度
+				con2.innerHTML=con1.innerHTML;
+				setInterval(clock,50);
+				function clock(){
+					div.scrollTop++
+					if(div.scrollTop>=con1.offsetHeight){
+						div.scrollTop=0
+					}
+				}
+				var div1=document.getElementById("div1");
+				div1.innerHTML+=div1.innerHTML;
+				div1.scrollTop=0;
+				iliheight=24//取li的高
+				var time;
+				function clk(){
+					div1.scrollTop++;
+					time=setInterval(set,50);
+				}
+				function set(){
+					if(div1.scrollTop%iliheight==0){
+						clearInterval(time);
+						setTimeout(clk,1000);
+					}else{
+						div1.scrollTop++;
+						if(div1.scrollTop>=div1.scrollHeight/2){
+							div1.scrollTop=0;
+						}
+					}
+				}
+				setTimeout(clk,1000);
+			</script>
+	</body>
+</html>

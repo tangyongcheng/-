@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p"></p>
+		<script type="text/javascript">
+		function clock(){
+			var nowtime=new Date();
+			var endtime=new Date("2016,7,7");
+			var countime=parseInt(( endtime.getTime()-nowtime.getTime())/1000);
+			var date=parseInt(countime/(24*60*60));
+			var h=parseInt(countime/(60*60)%24);//小时求模
+			var m=parseInt(countime/60%60);//分钟求模
+			var s=parseInt(countime%60);//秒求模
+			document.getElementById("p").innerHTML="还剩余"+date+"天"+h+"小时"+m+"分"+s+"秒"
+			
+		}
+			setInterval(clock,500)
+		</script>
+	</body>
+</html>

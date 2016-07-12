@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="">
+
+	<select name=""multiple="multiple"style="width: 100px;height: 160px;"id="sele1">
+		<option value="">0</option>
+			<option value="">1</option>
+			<option value="">2</option>
+			<option value="">3</option>
+			<option value="">4</option>
+			<option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+	</select>
+
+	<div class="">
+		<span id="add1">
+			添加到下面&gt;&gt;
+		</span>
+		<span id="add2">
+			全部添加到下面&gt;&gt;
+		</span>
+	</div>
+		<select name=""id="sele2"style="width: 100px;height: 160px;"multiple="multiple">
+		<option value=""></option>
+	</select>
+	<div class="">
+		<span id="add3">
+			添加到上面&lt;&lt;
+		</span>
+		<span id="add4">
+			全部添加到上面&lt;&lt;
+		</span>
+	</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#add1").click(function(){
+					$("#sele1 option:first").appendTo("#sele2")
+				})
+				$("#add2").click(function(){
+					$("#sele1 option").appendTo("#sele2")
+				})
+				$("#add3").click(function(){
+					$("#sele2 option:first").appendTo("#sele1")
+				})
+				$("#add4").click(function(){
+					$("#sele2 option").appendTo("#sele1")
+				})
+			})
+		</script>
+	</body>
+</html>
